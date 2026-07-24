@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clima Frio - TS refrigerações</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0a4fa3,#00b894);
+color:white;
+overflow-x:hidden;
+}
+
+header{
+background:rgba(0,0,0,.25);
+backdrop-filter:blur(10px);
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+}
+
+header h2{
+font-size:28px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#9ffcff;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:20px;
+text-shadow:0 0 15px #00ffff;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.botao{
+background:#00d2ff;
+padding:15px 35px;
+border-radius:40px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:.3s;
+box-shadow:0 0 20px rgba(0,255,255,.5);
+}
+
+.botao:hover{
+transform:scale(1.08);
+background:#00ffa2;
+}
+
+section{
+padding:80px 10%;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,.12);
+padding:25px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px cyan;
+}
+
+footer{
+background:#021b30;
+padding:30px;
+text-align:center;
+margin-top:40px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:32px;
+text-decoration:none;
+color:white;
+box-shadow:0 0 15px #25D366;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+50%{transform:scale(1.1);}
+}
+
+.snow{
+position:fixed;
+top:-20px;
+color:white;
+user-select:none;
+pointer-events:none;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>❄ Clima Frio</h2>
+
+<nav>
+<a href="#">Início</a>
+<a href="#servicos">Serviços</a>
+<a href="#contato">Contato</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<h1>Especialistas em Ar Condicionado</h1>
+
+<p>Instalação • Manutenção • Limpeza • Higienização</p>
+
+<a class="botao" href="https://wa.me/5500000000000">
+Solicitar Orçamento
+</a>
+
+</section>
+
+<section id="servicos">
+
+<h2>Nossos Serviços</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🛠 Instalação</h3>
+<p>Instalação profissional Industrial e Residencial.</p>
+</div>
+
+<div class="card">
+<h3>❄ Limpeza</h3>
+<p>Limpeza completa para maior eficiência.</p>
+</div>
+
+<div class="card">
+<h3>🔧 Manutenção</h3>
+<p>Preventiva e corretiva para evitar problemas.</p>
+</div>
+
+<div class="card">
+<h3>⚡ Atendimento Rápido</h3>
+<p>Orçamento sem compromisso.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer id="contato">
+
+<h2>Entre em Contato</h2>
+
+<p>📞 (21) 97957-2656</p>
+
+<p>📍 Cabo frio</p>
+
+<p>© 2026 Clima Frio</p>
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5500000000000">
+☎
+</a>
+
+<script>
+function criarNeve(){
+
+const floco=document.createElement("div");
+
+floco.classList.add("snow");
+
+floco.innerHTML="❄";
+
+floco.style.left=Math.random()*100+"vw";
+
+floco.style.fontSize=(10+Math.random()*20)+"px";
+
+floco.style.animationDuration=(5+Math.random()*8)+"s";
+
+document.body.appendChild(floco);
+
+setTimeout(()=>{
+floco.remove();
+},13000);
+
+}
+
+setInterval(criarNeve,180);
+</script>
+
+</body>
+</html>
